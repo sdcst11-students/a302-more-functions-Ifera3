@@ -14,8 +14,13 @@ assert btcTocad(1) == 45000
 (2 points) 
 """
 
-def btcTocad():
-    pass
+def btcTocad(BTCs):
+    currBTC = 45000.0
+    if type(BTCs) == str:
+        return 'error'
+    cad = BTCs * currBTC
+    print(cad)
+    return cad
 
 
 """
@@ -25,6 +30,6 @@ If this py file is imported by another program, then the commands below
 are not executed.
 """
 if __name__ == "__main__":
-    assert btcTocad(1) == 45000
-    assert btcTocad(2.5) == 135000
-    assert btcTocad(one) == 'error'
+    assert btcTocad(1) == 45000.0
+    assert btcTocad(3) == 135000.0
+    assert btcTocad("one") == 'error'

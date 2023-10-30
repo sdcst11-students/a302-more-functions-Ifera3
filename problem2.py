@@ -20,9 +20,20 @@ assert triangle(5,15,12) == 3
 assert triangle(1,1,4) == 0  
 (2 points)
 """
+import math
 
-def triangle():
-    return
+def triangle(A,B,C):
+    c = max(A,B,C)
+    a = min(A,B,C)
+    b = (A+B+C) - a - c
+    if a + b < c:
+        return 0
+    elif (a**2) + (b**2) > (c**2):
+        return 1
+    elif (a**2) + (b**2) == (c**2):
+        return 2
+    elif (a**2) + (b**2) < (c**2):
+        return 3
 
 def tests():
     assert triangle(12,5,13) == 2     
